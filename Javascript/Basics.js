@@ -169,4 +169,45 @@ const newNumber = number.toLocaleString("en-IN");
 let min = 10;
 let max = 20;
 
-console.log(Math.floor(Math.random() * (max - min+1) + min));
+// console.log(Math.floor(Math.random() * (max - min+1) + min));
+
+// Date
+
+let mydate = new Date();
+// console.log(mydate);
+// console.log(mydate.toString());
+// console.log(mydate.toISOString());
+// console.log(mydate.toJSON());
+// console.log(mydate.toLocaleDateString());
+// console.log(mydate.toLocaleString());
+// console.log(mydate.toLocaleTimeString());
+// console.log(mydate.toTimeString());
+// console.log(typeof mydate);
+
+let myOwnDate = new Date(2024, 0, 24);
+// console.log(myOwnDate.toDateString());
+
+let myOwnDate2 = new Date(2024, 0, 24, 4, 2, 3);
+// console.log(myOwnDate2.toLocaleDateString);
+// console.log(myOwnDate2.toLocaleString());
+
+let myTimeStamp = Date.now();
+// console.log(myTimeStamp);
+// console.log(myOwnDate.getTime());
+// console.log(myOwnDate.getDate());
+
+// console.log(Math.floor(Date.now() / 1000));
+
+let newDate = new Date();
+console.log(newDate.toString());
+console.log(newDate.getDate());
+console.log(newDate.getDay());
+console.log(newDate.getFullYear());
+console.log(newDate.getHours() + 1);
+console.log(newDate.getMinutes());
+console.log(newDate.getMilliseconds());
+console.log(newDate.getSeconds());
+
+console.log(
+  `Today the date is ${newDate.getDate()} , the month is ${newDate.getMonth()}, hours are ${newDate.getHours()} , the minutes are ${newDate.getMinutes()} and the seconds are ${newDate.getSeconds()}`
+);
