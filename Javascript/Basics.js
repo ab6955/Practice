@@ -49,8 +49,124 @@ let str3 = str1 + str2;
 
 let x = 2;
 let y = x++;
-console.log(`Y:${y} and X:${x}`);
+// console.log(`Y:${y} and X:${x}`);
 
 let a = 4;
 let b = ++a;
-console.log(`b:${b} and a:${a}`);
+// console.log(`b:${b} and a:${a}`);
+
+let name1 = "Abdullah";
+let name2 = name1;
+// name1="Ansari"
+name2 = "ansari";
+// console.log(name1);
+// console.log(name2);
+
+// symbol data type
+
+const id = Symbol("123");
+const anotherId = Symbol("123");
+
+// console.log(id === anotherId);
+
+// Array
+
+const heros = ["Mohammad", "abubakr", "Umar", "Usman"];
+
+const myobject = {
+  name: "Abdullah",
+  age: 12,
+};
+
+const myfunction = function () {
+  console.log("Hello World");
+};
+
+// console.log(typeof x);
+
+// Stack and Heap.
+/* 
+Stack => Primitive data types
+Heap => Non-primitive(reference) data types */
+
+let userOne = {
+  name: "Abdullah",
+  age: 12,
+};
+let userTwo = userOne;
+
+userTwo.name = "Ansari";
+
+// console.log(userOne.name);
+// console.log(userTwo.name);
+
+// String
+
+let newName = "abdullah";
+let age = 20;
+// console.log(newName + " " + age); not recommended
+
+// console.log(`My name is ${newName} and age is ${age}`);
+
+const newName2 = new String("abdansari");
+
+// console.log(newName2);
+// console.log(typeof newName2);
+// console.log(newName2.toUpperCase());
+// console.log(newName2.toLowerCase());
+// console.log(newName2.charAt(2));
+// console.log(newName2.indexOf("b"));
+
+const nayaName = "Abdullah_ansari";
+// console.log(nayaName.substring(2, 4));
+// console.log(nayaName);
+// console.log(nayaName.split("_"));
+// console.log(nayaName.slice(2, 4));
+
+const naame2 = "Abdullah ansari 1234";
+// console.log(naame2.split(" "));
+// console.log(naame2.split(" ",'2'));
+
+const dogName = "Your dog is not same as his dog!";
+// console.log(dogName.indexOf("dog",2));
+// console.log(dogName.replace("his","her"))
+// console.log(dogName.slice(-15, -1));
+// console.log(dogName.toUpperCase());
+// console.log(dogName.toLowerCase());
+// console.log(dogName.startsWith("y"));
+// console.log(dogName.endsWith("!"));
+
+// Numbers
+
+const score12 = 334;
+// console.log(score12);
+
+const balance = new Number(2334.2343);
+// console.log(balance);
+// console.log(balance.toString().length);
+// console.log(balance.toFixed(2));
+// console.log(balance.toPrecision(5));
+
+const number = 200000;
+// const newNumber = number.toLocaleString();
+const newNumber = number.toLocaleString("en-IN");
+// console.log(newNumber);
+
+// Maths
+// console.log(Math.abs(-3));
+// console.log(Math.round(5.6));
+// console.log(Math.ceil(5.1));
+// console.log(Math.floor(6.6));
+// console.log(Math.sqrt(5));
+// console.log(Math.min(4, 6, 65, 34, 23));
+// console.log(Math.max(4, 6, 65, 34, 23));
+
+// console.log(Math.random());
+// console.log(Math.random() * 10);
+// console.log(Math.random() * 10 + 1);
+// console.log(Math.floor(Math.random() * 10) + 1);
+
+let min = 10;
+let max = 20;
+
+console.log(Math.floor(Math.random() * (max - min+1) + min));
