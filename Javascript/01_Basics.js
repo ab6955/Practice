@@ -104,7 +104,7 @@ console.log(userTwo.name);
 
 let newName = "abdullah";
 let age = 20;
-console.log(newName + " " + age); not recommended
+console.log(newName + " " + age); // not recommended
 
 console.log(`My name is ${newName} and age is ${age}`);
 

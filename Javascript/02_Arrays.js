@@ -1,0 +1,45 @@
+const heroes = ["a", "b", "c"];
+// console.log(heroes);
+// console.log(heroes[2]);
+
+const newHeroes = new Array(6, 5, 4, 3, 2, 1, 0);
+// console.log(newHeroes[4]);
+
+// Arrays Method
+
+const myArray = [1, 2, 3];
+// myArray.push(10);
+// myArray.push(11);
+// myArray.push(12);
+// myArray.push(13);
+// console.log(myArray);
+
+// myArray.pop();
+// myArray.pop();
+// myArray.pop();
+// myArray.pop();
+// myArray.pop();
+// console.log(myArray);
+
+// myArray.unshift(34)
+// myArray.unshift(44)
+// myArray.unshift(54)
+// myArray.unshift(64)
+// myArray.unshift(74)
+// console.log(myArray);
+
+// myArray.shift()
+// myArray.shift()
+// console.log(myArray);
+
+console.log(myArray.includes(3));
+console.log(myArray.indexOf(1));
+
+const newArr = myArray.join(); // join convert the array to string.
+console.log(myArray);
+console.log(typeof myArray);
+console.log(newArr);
+console.log(typeof newArr);
+
+// slice (not manipulate the original array)and  splice(YES! manipulate the original array)
+
