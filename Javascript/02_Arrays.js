@@ -64,12 +64,17 @@ const anotherArr = [1, 2, 3, 4, [5, 6, [7, 8]], 9];
 const realAnotherArray = anotherArr.flat(1);
 // console.log(realAnotherArray);
 
-console.log(Array.isArray(function () {}));
+// console.log(Array.isArray(function () {}));
 
-console.log(Array.from("Abdullah"));
+// console.log(Array.from("Abdullah"));
 
 const maths = 90;
 const physics = 80;
 const chem = 60;
+console.log(Array.of(maths,physics,chem));
 
-console.log(Array.of(maths));
+// console.log(Array.from("123"));
+const set = new Set(["Abdullah", "Ansari", "Ahmed"]);
+// console.log(Array.from(set));
+
+console.log(Array.of(200, "300", "400"));
