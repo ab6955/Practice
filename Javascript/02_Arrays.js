@@ -32,14 +32,44 @@ const myArray = [1, 2, 3];
 // myArray.shift()
 // console.log(myArray);
 
-console.log(myArray.includes(3));
-console.log(myArray.indexOf(1));
+// console.log(myArray.includes(3));
+// console.log(myArray.indexOf(1));
 
 const newArr = myArray.join(); // join convert the array to string.
-console.log(myArray);
-console.log(typeof myArray);
-console.log(newArr);
-console.log(typeof newArr);
+// console.log(myArray);
+// console.log(typeof myArray);
+// console.log(newArr);
+// console.log(typeof newArr);
 
 // slice (not manipulate the original array)and  splice(YES! manipulate the original array)
 
+// Array Advance
+
+const marvelHeroes = ["Captain", "IronMan", "AntMan"];
+const dcHeroes = ["BatMan", "Flash"];
+
+// marvelHeroes.push(dcHeroes);
+// console.log(marvelHeroes);
+// console.log(marvelHeroes[3]);
+// console.log(marvelHeroes[3][1]);
+
+marvelHeroes.concat(dcHeroes); // concat combine two array and give result in NEW Array.(unlike push)
+const allHeroes = marvelHeroes.concat(dcHeroes);
+// console.log(allHeroes);
+
+const allNewHeroes = [...marvelHeroes, ...dcHeroes]; // spread operator(easy + imp)
+// console.log(allNewHeroes);
+
+const anotherArr = [1, 2, 3, 4, [5, 6, [7, 8]], 9];
+const realAnotherArray = anotherArr.flat(1);
+// console.log(realAnotherArray);
+
+console.log(Array.isArray(function () {}));
+
+console.log(Array.from("Abdullah"));
+
+const maths = 90;
+const physics = 80;
+const chem = 60;
+
+console.log(Array.of(maths));
