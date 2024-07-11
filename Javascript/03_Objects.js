@@ -81,10 +81,26 @@ const obj4 = { ...obj1, ...obj2, ...obj3 }; //Our fav spread opeator.
 // console.log(obj4);
 
 // we can extract keys and values from objects.
-console.log(tinderUser);
-console.log(Object.keys(tinderUser)); // a method to extract keys and arrange them in array.
-console.log(Object.values(tinderUser)); //  a method to extract values and arrange them in array.
-console.log(Object.entries(tinderUser)); // a method which bind key and value in single array | first value is key and second value is value
+// console.log(tinderUser);
+// console.log(Object.keys(tinderUser)); // a method to extract keys and arrange them in array.
+// console.log(Object.values(tinderUser)); //  a method to extract values and arrange them in array.
+// console.log(Object.entries(tinderUser)); // a method which bind key and value in single array | first value is key and second value is value
 
-console.log(tinderUser.hasOwnProperty("name"));
-console.log(tinderUser.hasOwnProperty("isLoggedIn"));
+// console.log(tinderUser.hasOwnProperty("name"));
+// console.log(tinderUser.hasOwnProperty("isLoggedIn"));
+
+// destructing Object
+
+const course = {
+  courseName: "js",
+  price: 122,
+  instructorName: "Abd",
+};
+
+// console.log(course.instructorName);
+
+// const {instructorName}=course
+// console.log(instructorName);
+
+const { instructorName: teacher } = course;
+console.log(teacher);
