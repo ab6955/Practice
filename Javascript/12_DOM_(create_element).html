@@ -4,45 +4,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Learning</title>
+    <title>DOM Manipulation-Create Element</title>
 </head>
 
-<body style="background-color: #414141; color: white;">
+<body style="background-color: rgb(65, 64, 64); color: #dc8585;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
 
 </body>
+
 <script>
-    // const div = document.createElement('div')
-    // console.log(div);
-    // div.className = 'main'
-    // div.id = Math.round(Math.random() * 10 + 1)
-    // div.setAttribute('title', 'my title')
-    // div.style.backgroundColor = 'red'
-    // div.style.borderRadius = '10px'
-    // div.style.padding = '12px'
-    // // div.textContent="Chai aur Code"  
-    // // above code not optimized code
-    // const addtext = document.createTextNode('chai aur code')
-    // div.appendChild(addtext)
-    // document.body.appendChild(div)
+    // selecting parent and trying to get its chidren and manipulate them.
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);  // it will give HTMLCOllection.
+    console.log(parent.children[2]);
+    console.log(parent.children[2].innerText);
 
+    // try to print each and every children of parent using loop
+    for (let i = 0; i < parent.children.length; i++) {  // here paren.children is giving HTMLcollection(array like)
+        console.log(parent.children[i].innerText);
+        parent.children[i].style.fontSize = '30px'
 
-    function createFunc(text, bcgclr, borderradius, padding) {
-        const div = document.createElement('div')
-        console.log(div);
-        div.className = 'main'
-        div.id = Math.round(Math.random() * 10 + 1)
-        div.setAttribute('title', 'my title')
-        div.style.backgroundColor = bcgclr
-        div.style.borderRadius = borderradius
-        div.style.padding = padding
-        // div.textContent="Chai aur Code"  
-        // above code not optimized code
-        const addtext = document.createTextNode(text)
-        div.appendChild(addtext)
-        document.body.appendChild(div)
+        switch (i) {
+            case 0:
+                parent.children[i].style.backgroundColor = "blue"
+                parent.children[i].style.padding = '10px'
+                break;
+            case 1:
+                parent.children[i].style.backgroundColor = "orange"
+                parent.children[i].style.padding = '15px'
+                break;
+            case 2:
+                parent.children[i].style.backgroundColor = "green"
+                parent.children[i].style.padding = '20px'
+                break;
+            case 3:
+                parent.children[i].style.backgroundColor = "yellow"
+                parent.children[i].style.padding = '25px'
+                break;
+        }
     }
 
-    createFunc("Abdullah", "red", "20px", "10px")
+    // selecting first and last child of parent element
+    console.log(parent.firstElementChild)
+    console.log(parent.lastElementChild)
+
+    // Now from children to parent
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne);
+    console.log(dayOne.parentElement);
+    console.log(dayOne.nextElementSibling);
+
+    console.log("Nodes", parent.childNodes); //this will give tress structure of parent.
+
+    // Lets create an ELEMENT
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = 'main'
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute('title', 'creatingElement')
+    div.style.backgroundColor = "green"
+    div.style.padding = '12px'
+    div.style.borderRadius = '12px'
+    // div.innerText = "chai aur code" // not an optimized approach.
+    const addText = document.createTextNode('CHAI AUR CODE')
+    div.appendChild(addText)
+
+    document.body.appendChild(div)
+
 </script>
 
 </html>
