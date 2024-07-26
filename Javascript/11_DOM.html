@@ -4,61 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript</title>
-    <style>
-        .bg_black {
-            background-color: #212121;
-            color: #fff;
-        }
-    </style>
+    <title>DOM</title>
 </head>
 
-<body class="bg_black">
-    <!-- <div>
-        <h1 id="title" class="heading">Learning JS on chai aur code <span style="display: none;">text test</span></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, aspernatur.</p>
-        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero eum voluptatibus sapiente.</h2>
-        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero eum voluptatibus sapiente.</h2>
-        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero eum voluptatibus sapiente.</h2>
-        <input type="date" name="" id="">
-    </div>
+<body style="background-color: #313131; color: white;">
+    <div>
+        <h1 class="heading" id="title">Chai aur Code</h1>
+        <h2 class="heading" title="sub_heading">DOM Manipulation</h2>
+        <h2 id="lorem">Lorem ipsum dolor sit amet.</h2>
+        <h2>h2</h2>
+        <input type="password" name="" id="">
 
-    <ul>
-        <li class="list_item">one</li>
-        <li class="list_item">two</li>
-        <li class="list_item">three</li>
-        <li class="list_item">four</li>
-        <li class="list_item">five</li>
-    </ul> -->
-
-    <div class="parent">
-        <div class="day">Monday</div>
-        <div class="day">Tuesday</div>
-        <div class="day">Wednesday</div>
-        <div class="day">Thursday</div>
+        <ul>
+            <li class="list_item">one</li>
+            <li class="list_item">two</li>
+            <li class="list_item">three</li>
+            <li class="list_item">four</li>
+        </ul>
     </div>
 
 </body>
+
 <script>
-    const parent = document.querySelector('.parent')
-    // console.log(parent);
-    // console.log(parent.children);
-    // console.log(parent.children[3]);
-    // console.log(parent.children[3].innerText);
+    const h1 = document.querySelector('h1')
+    // console.log(h1);
 
-    for (let i = 0; i < parent.children.length; i++) {
-        // console.log(parent.children[i].innerText);
-    }
-    // parent.children[1].style.color = 'yellow'
-    // console.log(parent.firstElementChild);
-    // console.log(parent.lastElementChild);
+    const h2 = document.querySelector('h2')
+    // console.log(h2);
+    h2.style.backgroundColor = 'lightblue'
+    h2.style.color = 'black'
+    h2.style.padding = '12px'
+    h2.style.borderRadius = '12px'
 
-    const dayOne = parent.querySelector('.day')
-    // console.log(dayOne);
-    // console.log(dayOne.parentElement);
-    // console.log(dayOne.nextElementSibling);
+    const lorem = document.querySelector('#lorem')
+    lorem.style.backgroundColor = 'blue'
+    // console.log(lorem);
 
-    console.log("NODES",parent.childNodes);
+    const myul = document.querySelector('ul')
+    console.log(myul);
+    // myul.style.backgroundColor = 'purple'
+
+    const turnGreen = myul.querySelector('li')
+    console.log(turnGreen);
+    turnGreen.style.backgroundColor = 'green'
+    turnGreen.style.padding = '10px'
+    console.log(turnGreen.innerText)
+    turnGreen.innerText = '34'
+
+    const tempLilist = document.querySelectorAll('li')
+    console.log(tempLilist);
+    // tempLilist.style.color = 'orange'//  cannot set properties (for description go to line 67)
+    // using Array like property.
+    // tempLilist[1].style.color = 'orange'
+    // using forEach loop
+    tempLilist.forEach((l) => {
+        console.log(l);
+        l.style.color = 'purple'
+    })
+
+    const myH1 = document.querySelectorAll('h1')
+    console.log(myH1);
+    // myH1.style.color = 'pink' // won't work (line 77).
+
+    const getClassItem = document.getElementsByClassName('list_item')
+    // u can use array like propery here also
+    // getClassItem[0].style.backgroundColor = 'blue'
+    // trying to use forEach loop below in HTMLcollection.
+    console.log(getClassItem); // it will give HTMLCOllection
+    // getClassItem.forEach((li) =>// not work
+    // {
+    //     console.log(li);
+    // })
+
+
+    // You can convert Nodelist and HTMLcollection into Array so that u can fully utilize array's properties.
+    const myConvertedArray = Array.from(getClassItem)
+    console.log(myConvertedArray);
+    myConvertedArray.forEach((li) => {
+        li.style.backgroundColor = 'orange'
+    })
 </script>
 
 </html>
+
+<!-- 
+Important Notes:
+
+1) you can select any element using querySelector and apply style to it (even if it is set of elements like e.g ul 
+    on line 41,43).
+
+2) You cannot directly apply style while using querySelectorAll because it returns a nodelist (not a single     
+    element) e.g. on line 52,53.
+   - Intead you can get each element of that node like array[0] and then apply style property to it.
+    e.g. on line 56.
+   - And the most common is to use ForEach loop.
+   - It does not matter whether nodelist contain 1 element or 100.
+
+3) You cannot use forEach or any kind of loop on HTMLCollection . but u can use [0] or [2] method as you use in nodelist beacise both Nodelist and HTMLcollection are Array aike (not same). 
+
+4) getElementByClassName => HTMLcollection()
+   querySelectorAll      => Nodelist()
+-->
