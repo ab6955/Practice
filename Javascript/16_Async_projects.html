@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+
+<body>
+
+    <h1>Chai aur Code</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    // setTimeOut and ClearTimeout
+
+    // const sayName = () => {
+    //     console.log("Abdullah");
+    // }
+    // const changeText = () => {
+    //     const h1 = document.querySelector('h1')
+    //     h1.innerHTML = "Best Js Series"
+
+    // }
+
+    // const changeMe = setTimeout(changeText, 2000);
+
+    // document.querySelector('#stop').addEventListener('click', (event) => {
+
+    //     clearTimeout(changeMe)
+    //     console.log("Stopped");
+    // }, false)
+
+    // setInterval and clearInterval
+    // const sayDate = (str) => {
+    //     console.log(str, Date.now());
+    // }
+    // const intervalId = setInterval(sayDate, 1000, "abd");
+    // clearInterval(intervalId)
+
+
+
+    // Given Task
+    const Task = function () {
+        // document.querySelector('h1').innerHTML = "Greatest JS Series"
+        console.log(Date.now());
+    }
+    let givenTask;
+    document.querySelector('#start').addEventListener('click', () => {
+        givenTask = setInterval(Task, 1000);
+        console.log("Task Start");
+    }, false)
+    document.querySelector('#stop').addEventListener('click', () => {
+        clearInterval(givenTask)
+        console.log("Task Stopped");
+    }, false)
+
+
+
+</script>
+
+</html>
