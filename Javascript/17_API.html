@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <style>
+        .card {
+            width: 20vw;
+            height: 50vh;
+            background-color: aliceblue;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body style="background-color: #414141; color: rgb(116, 170, 218);">
+    <!--  
+    Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is completeu
+    -->
+
+    <!-- Given Task -->
+    <div class="card">
+        <button>click</button>
+    </div>
+
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/ab6955'
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            // const data = this.responseText  //here data is contain string
+            const data = JSON.parse(this.responseText)
+            // console.log(data)
+            // console.log(data.followers); // data type is string.
+
+        }
+    }
+    xhr.send()
+
+    // Given Task.
+    const requestUrl2 = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr2 = new XMLHttpRequest()
+    xhr2.open('GET', requestUrl2)
+    console.log(xhr2.readyState)
+
+    xhr2.onreadystatechange = function () {
+        if (xhr2.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            const followers = data.followers
+            const image = data.avatar_url
+            // console.log(data.followers);
+            // console.log(data.avatar_url);
+            document.querySelector('button').addEventListener('click', () => {
+
+                const card = document.querySelector('.card')
+                const div = document.createElement('div')
+                div.appendChild(document.createTextNode(`Total Followers are:${followers}`))
+                card.appendChild(div)
+                const img = document.createElement('IMG')
+                img.src = image
+                img.style.width = '20vw'
+                img.style.height = '40vh'
+                card.appendChild(img)
+            })
+        }
+    }
+    xhr2.send()
+
+</script>
+
+</html>
