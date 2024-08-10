@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure with Chai</title>
+</head>
+
+<body style="background-color:black;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // here in the code below, what will you do if you have to add 100 new button ?
+
+    // document.querySelector('#orange').addEventListener('click', () => {
+    //     document.body.style.backgroundColor = 'orange'
+    // })
+    // document.querySelector('#green').addEventListener('click', () => {
+    //     document.body.style.backgroundColor = 'green'
+    // })
+
+    // please read the mdn documents.
+    function handler(color) {
+        // document.body.style.backgroundColor = color  
+
+        return function () { // here if you dont return function, then value will execute instantly on line 32 $
+            document.body.style.backgroundColor = color
+        }
+    }
+
+    document.querySelector('#orange').addEventListener('click', handler("orange"))
+    document.querySelector('#green').addEventListener('click', handler("green"))
+
+</script>
+
+</html>
