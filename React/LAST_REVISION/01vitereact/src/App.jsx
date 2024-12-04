@@ -1,10 +1,11 @@
 import Chai from "./chai";
 
 function App() {
+  const username = "Abdullah Ansari";
   return (
     <>
       <Chai />
-      <p>HIi</p>
+      <h1>Hii {username}</h1>
     </>
   );
 }
