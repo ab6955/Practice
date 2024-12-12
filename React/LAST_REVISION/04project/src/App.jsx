@@ -2,12 +2,12 @@ import { useState } from "react";
 // import './App.css'
 
 function App() {
-  const [backgroundColor, setBackgroundColor] = useState("<bg-gray-1></bg-gray-1>00");
+  const [backgroundColor, setBackgroundColor] = useState("bg-gray-100");
 
   return (
     <>
       <div
-        className="w-full h-screen bg-gray-500 text-white flex justify-center items-end"
+        className="w-full h-screen text-white flex justify-center items-end"
         style={{ backgroundColor: backgroundColor }}
       >
         <div className="flex bg-slate-300 m-10 p-2 rounded-3xl gap-x-3">
@@ -22,14 +22,14 @@ function App() {
             className=" text-white font-bold bg-blue-600 p-1 px-5 m-2 rounded-3xl"
             onClick={() => setBackgroundColor("blue")}
           >
-            Green
+            Blue
           </button>
 
           <button
             className=" text-white font-bold bg-green-600 p-1 px-5 m-2 rounded-3xl"
             onClick={() => setBackgroundColor("green")}
           >
-            Blue
+            Green
           </button>
 
           <button
